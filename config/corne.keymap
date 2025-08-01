@@ -14,9 +14,8 @@
     behaviors {
         u_mt: u_mt {
             compatible = "zmk,behavior-hold-tap";
-            label = "Mod Tap";
+            display-name = "Mod-Tap";
             bindings = <&kp>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
@@ -24,9 +23,8 @@
 
         u_lt: u_lt {
             compatible = "zmk,behavior-hold-tap";
-            label = "Layer Tap";
+            display-name = "Layer-Tap";
             bindings = <&mo>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
@@ -34,63 +32,63 @@
 
         u_to_tap: u_to_tap {
             compatible = "zmk,behavior-tap-dance";
-            label = "Doublt-Tap to Tap";
+            display-name = "Doublt-Tap to Tap";
             #binding-cells = <0>;
             bindings = <&none>, <&to 2>;
         };
 
         u_to_extra: u_to_extra {
             compatible = "zmk,behavior-tap-dance";
-            label = "Double-Tap to Extra";
+            display-name = "Double-Tap to Extra";
             #binding-cells = <0>;
             bindings = <&none>, <&to 1>;
         };
 
         u_to_base: u_to_base {
             compatible = "zmk,behavior-tap-dance";
-            label = "Double-Tap to Base";
+            display-name = "Double-Tap to Base";
             #binding-cells = <0>;
             bindings = <&none>, <&to 0>;
         };
 
         u_to_num: u_to_num {
             compatible = "zmk,behavior-tap-dance";
-            label = "Double-Tap to Num";
+            display-name = "Double-Tap to Num";
             #binding-cells = <0>;
             bindings = <&none>, <&to 7>;
         };
 
         u_to_nav: u_to_nav {
             compatible = "zmk,behavior-tap-dance";
-            label = "Double-Tap to Nav";
+            display-name = "Double-Tap to Nav";
             #binding-cells = <0>;
             bindings = <&none>, <&to 4>;
         };
 
         u_to_sym: u_to_sym {
             compatible = "zmk,behavior-tap-dance";
-            label = "Double-Tap to Sym";
+            display-name = "Double-Tap to Sym";
             #binding-cells = <0>;
             bindings = <&none>, <&to 8>;
         };
 
         u_to_mouse: u_to_mouse {
             compatible = "zmk,behavior-tap-dance";
-            label = "Double-Tap to Mouse";
+            display-name = "Double-Tap to Mouse";
             #binding-cells = <0>;
             bindings = <&none>, <&to 5>;
         };
 
         u_to_fun: u_to_fun {
             compatible = "zmk,behavior-tap-dance";
-            label = "Double-Tap to Fun";
+            display-name = "Double-Tap to Fun";
             #binding-cells = <0>;
             bindings = <&none>, <&to 9>;
         };
 
         u_to_media: u_to_media {
             compatible = "zmk,behavior-tap-dance";
-            label = "Double-Tap to Media";
+            display-name = "Double-Tap to Media";
             #binding-cells = <0>;
             bindings = <&none>, <&to 6>;
         };
@@ -100,12 +98,6 @@
         compatible = "zmk,keymap";
 
         BASE {
-            // -----------------------------------------------------------------------------------------
-            // | TAB  |  Q  |  W  |  E  |  R  |    T    |   |  Y  |  U   |  I  |  O  |  P  | ESC |
-            // | CTRL |  A  |  S  |  D  |  F  |    G    |   |  H  |  J   |  K  |  L  |  ;  |  LWR/'   |
-            // | SHFT |  Z  |  X  |  C  |  V  |    B    |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-            //                    | GUI | LWR | ALT/ENT |   | HYPER/SPC | BKSP  | RSE |
-
             bindings = <
 &none  &kp Q             &kp W              &kp E                 &kp R               &kp T          &kp Y           &kp U               &kp I                 &kp O                   &kp P                     &kp LEFT_BRACKET
 &none  &u_mt LEFT_WIN A  &u_mt LEFT_ALT S   &u_mt LEFT_CONTROL D  &u_mt LEFT_SHIFT F  &kp G          &kp H           &u_mt LEFT_SHIFT J  &u_mt LEFT_CONTROL K  &u_mt LEFT_ALT L        &u_mt LEFT_WIN SEMICOLON  &kp SINGLE_QUOTE
@@ -113,7 +105,7 @@
                                             &u_lt 6 ESCAPE        &u_lt 4 SPACE       &u_lt 5 TAB    &u_lt 8 RETURN  &u_lt 7 BACKSPACE   &u_lt 9 DELETE
             >;
 
-            label = "Base";
+            display-name = "Base";
         };
 
         EXTRA {
@@ -124,7 +116,7 @@
                                 &kp ESCAPE  &kp SPACE  &kp TAB    &kp ENTER  &kp BACKSPACE  &kp DELETE
             >;
 
-            label = "Extra";
+            display-name = "Extra";
         };
 
         TAP {
@@ -135,7 +127,7 @@
                                 &kp ESC  &kp SPACE  &kp TAB    &kp ENTER  &kp BSPC  &kp DELETE
             >;
 
-            label = "Tap";
+            display-name = "Tap";
         };
 
         BUTTON {
@@ -146,16 +138,10 @@
                                    &mkp MB3          &mkp MB1        &mkp MB2     &mkp MB2   &mkp MB1        &mkp MB3
             >;
 
-            label = "Button";
+            display-name = "Button";
         };
 
         NAV {
-            // -----------------------------------------------------------------------------------------
-            // |      |  !  |  @  |  #  |  $  |    %     |   |  ^  |  &  |  *  |  (  |  )  |   \   |
-            // |      |  1  |  2  |  3  |  4  |    5     |   |  -  |  =  |  `  |  [  |  ]  |  "|"  |
-            // | SHFT |  6  |  7  |  8  |  9  |    0     |   |  _  |  +  |  ~  |  {  |  }  | RSHFT |
-            //                     | GUI |     | ALT/ENT |   | HYPER/SPACE | BKSP |    |
-
             bindings = <
 &none  &bootloader   &u_to_tap      &u_to_extra       &u_to_base      &none    &kp LC(Y)       &kp LC(V)       &kp LC(C)     &kp LC(X)        &kp LC(Z)   &none
 &none  &kp LEFT_WIN  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &caps_word  &none
@@ -163,16 +149,10 @@
                                     &none             &none           &none    &kp RETURN      &kp BACKSPACE   &kp DELETE
             >;
 
-            label = "Nav";
+            display-name = "Nav";
         };
 
         MOUSE {
-            // -----------------------------------------------------------------------------------------
-            // |       |  F1  |  F2  |  F3  |  F4  |  F5 |            |  F6  |  F7  |  F8  |  F9  |  F10  |   |
-            // |       | Prev | Next | Vol - | Vol + | Play/Pause |   |      | LFT | DWN |  UP | RGT |     |     |
-            // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |   |            |     |     |     |     |     |     |
-            //                    |     |     |    |                  |     |     |     |
-
             bindings = <
 &none  &bootloader   &u_to_tap      &u_to_extra       &u_to_base      &none    &kp LC(Y)       &kp LC(V)       &kp LC(C)     &kp LC(X)        &kp LC(Z)  &none
 &none  &kp LEFT_WIN  &kp LEFT_ALT   &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none      &none
@@ -180,7 +160,7 @@
                                     &none             &none           &none    &mkp MB2        &mkp MB1        &mkp MB3
             >;
 
-            label = "Mouse";
+            display-name = "Mouse";
         };
 
         MEDIA {
@@ -191,7 +171,7 @@
                                     &none             &none           &none    &kp C_STOP      &kp C_PLAY_PAUSE   &kp C_MUTE
             >;
 
-            label = "Media";
+            display-name = "Media";
         };
 
         NUM {
@@ -202,7 +182,7 @@
                                  &kp PERIOD  &kp N0  &kp MINUS            &none  &none           &none
             >;
 
-            label = "Num";
+            display-name = "Num";
         };
 
         SYM {
@@ -213,7 +193,7 @@
                                         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE     &none  &none           &none
             >;
 
-            label = "Sym";
+            display-name = "Sym";
         };
 
         FUN {
@@ -224,7 +204,7 @@
                         &kp K_APPLICATION  &kp SPACE  &kp TAB            &none  &none           &none
             >;
 
-            label = "Fun";
+            display-name = "Fun";
         };
     };
 };
