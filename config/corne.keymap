@@ -16,6 +16,7 @@
             compatible = "zmk,behavior-hold-tap";
             display-name = "Mod-Tap";
             bindings = <&kp>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
@@ -25,6 +26,7 @@
             compatible = "zmk,behavior-hold-tap";
             display-name = "Layer-Tap";
             bindings = <&mo>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
@@ -99,10 +101,10 @@
 
         BASE {
             bindings = <
-&none  &kp Q             &kp W              &kp E                 &kp R               &kp T          &kp Y           &kp U               &kp I                 &kp O                   &kp P                     &kp LEFT_BRACKET
-&none  &u_mt LEFT_WIN A  &u_mt LEFT_ALT S   &u_mt LEFT_CONTROL D  &u_mt LEFT_SHIFT F  &kp G          &kp H           &u_mt LEFT_SHIFT J  &u_mt LEFT_CONTROL K  &u_mt LEFT_ALT L        &u_mt LEFT_WIN SEMICOLON  &kp SINGLE_QUOTE
-&none  &u_lt 3 Z         &u_mt RIGHT_ALT X  &kp C                 &kp V               &kp B          &kp N           &kp M               &kp COMMA             &u_mt RIGHT_ALT PERIOD  &u_lt 3 SLASH             &none
-                                            &u_lt 6 ESCAPE        &u_lt 4 SPACE       &u_lt 5 TAB    &u_lt 8 RETURN  &u_lt 7 BACKSPACE   &u_lt 9 DELETE
+&none  &kp Q             &kp W              &kp E                 &kp R               &kp T             &kp Y           &kp U               &kp I                 &kp O                   &kp P                     &kp LEFT_BRACKET
+&none  &u_mt LEFT_WIN A  &u_mt LEFT_ALT S   &u_mt LEFT_CONTROL D  &u_mt LEFT_SHIFT F  &kp G             &kp H           &u_mt LEFT_SHIFT J  &u_mt LEFT_CONTROL K  &u_mt LEFT_ALT L        &u_mt LEFT_WIN SEMICOLON  &kp SINGLE_QUOTE
+&none  &u_lt 3 Z         &u_mt RIGHT_ALT X  &kp C                 &kp V               &kp B             &kp N           &kp M               &kp COMMA             &u_mt RIGHT_ALT PERIOD  &u_lt 3 SLASH             &none
+                                            &u_lt 6 TAB           &u_lt 4 SPACE       &u_lt 5 ESCAPE    &u_lt 8 RETURN  &u_lt 7 BACKSPACE   &u_lt 9 DELETE
             >;
 
             display-name = "Base";
@@ -110,10 +112,10 @@
 
         EXTRA {
             bindings = <
-&u_to_base        &kp Q  &kp W  &kp E       &kp R      &kp T      &kp Y      &kp U          &kp I       &kp O    &kp P     &kp LBKT
-&kp LEFT_SHIFT    &kp A  &kp S  &kp D       &kp F      &kp G      &kp H      &kp J          &kp K       &kp L    &kp SEMI  &kp APOS
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C       &kp V      &kp B      &kp N      &kp M          &kp COMMA   &kp DOT  &kp FSLH  &kp LEFT_ALT
-                                &kp ESCAPE  &kp SPACE  &kp TAB    &kp ENTER  &kp BACKSPACE  &kp DELETE
+&u_to_base        &kp Q  &kp W  &kp E    &kp R      &kp T         &kp Y      &kp U          &kp I       &kp O    &kp P     &kp LBKT
+&kp LEFT_SHIFT    &kp A  &kp S  &kp D    &kp F      &kp G         &kp H      &kp J          &kp K       &kp L    &kp SEMI  &kp APOS
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C    &kp V      &kp B         &kp N      &kp M          &kp COMMA   &kp DOT  &kp FSLH  &kp LEFT_ALT
+                                &kp TAB  &kp SPACE  &kp ESCAPE    &kp ENTER  &kp BACKSPACE  &kp DELETE
             >;
 
             display-name = "Extra";
@@ -121,10 +123,10 @@
 
         TAP {
             bindings = <
-&u_to_base        &kp Q  &kp W  &kp E    &kp R      &kp T      &kp Y      &kp U     &kp I       &kp O    &kp P     &kp LBKT
-&kp LEFT_SHIFT    &kp A  &kp S  &kp D    &kp F      &kp G      &kp H      &kp J     &kp K       &kp L    &kp SEMI  &kp APOS
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C    &kp V      &kp B      &kp N      &kp M     &kp COMMA   &kp DOT  &kp FSLH  &kp LEFT_ALT
-                                &kp ESC  &kp SPACE  &kp TAB    &kp ENTER  &kp BSPC  &kp DELETE
+&u_to_base        &kp Q  &kp W  &kp E    &kp R      &kp T         &kp Y      &kp U     &kp I       &kp O    &kp P     &kp LBKT
+&kp LEFT_SHIFT    &kp A  &kp S  &kp D    &kp F      &kp G         &kp H      &kp J     &kp K       &kp L    &kp SEMI  &kp APOS
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C    &kp V      &kp B         &kp N      &kp M     &kp COMMA   &kp DOT  &kp FSLH  &kp LEFT_ALT
+                                &kp TAB  &kp SPACE  &kp ESCAPE    &kp ENTER  &kp BSPC  &kp DELETE
             >;
 
             display-name = "Tap";
@@ -198,10 +200,10 @@
 
         FUN {
             bindings = <
-&none  &kp F12  &kp F7  &kp F8             &kp F9     &kp PRINTSCREEN    &none  &u_to_base      &u_to_extra       &u_to_tap      &bootloader   &none
-&none  &kp F11  &kp F4  &kp F5             &kp F6     &kp SCROLLLOCK     &none  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT   &kp LEFT_WIN  &none
-&none  &kp F10  &kp F1  &kp F2             &kp F3     &kp PAUSE_BREAK    &none  &none           &u_to_media       &kp RIGHT_ALT  &none         &none
-                        &kp K_APPLICATION  &kp SPACE  &kp TAB            &none  &none           &none
+&none  &kp F12  &kp F7  &kp F8   &kp F9     &kp PRINTSCREEN       &none  &u_to_base      &u_to_extra       &u_to_tap      &bootloader   &none
+&none  &kp F11  &kp F4  &kp F5   &kp F6     &kp SCROLLLOCK        &none  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT   &kp LEFT_WIN  &none
+&none  &kp F10  &kp F1  &kp F2   &kp F3     &kp PAUSE_BREAK       &none  &none           &u_to_media       &kp RIGHT_ALT  &none         &none
+                        &kp TAB  &kp SPACE  &kp K_CONTEXT_MENU    &none  &none           &none
             >;
 
             display-name = "Fun";
